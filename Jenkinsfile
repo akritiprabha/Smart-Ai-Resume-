@@ -15,16 +15,26 @@ pipeline {
             }
         }
 
-        stage('Remove Old Container and Image') {
+               stage('Remove Old Container and Image') {
             steps {
-                echo '=== Stopping and Removing Old Container ==='
-                bat "docker stop %DOCKER_CONTAINER% || echo Container not running"
-                bat "docker rm %DOCKER_CONTAINER% || echo Container not found"
+                echo '=== Stopping and Removing Old Container and Image ==='
+                script {
+                    try {
+                        bat "docker stop %DOCKER_CONTAINER%"
+                        bat "docker rm %DOCKER_CONTAINER%"
+                    } catch (Exception e) {
+                        echo 'Container not running or already removed. Skipping...'
+                    }
 
-                echo '=== Removing Old Docker Image ==='
-                bat "docker rmi %DOCKER_IMAGE% || echo Image not found or in use"
+                    try {
+                        bat "docker rmi %DOCKER_IMAGE%"
+                    } catch (Exception e) {
+                        echo 'Image not found or in use. Skipping...'
+                    }
+                }
             }
         }
+
 
         stage('Build Docker Image') {
             steps {

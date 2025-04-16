@@ -11,7 +11,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Cloning from the main branch
-                git branch: 'main', url: 'https://github.com/'
+                git branch: 'main', url: 'https://github.com/akritiprabha/Smart-Ai-Resume-.git'
             }
         }
 

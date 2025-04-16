@@ -13,7 +13,10 @@ RUN apt-get update && apt-get install -y \
 
 # Copy requirements first for better caching
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+# Enhanced pip install with timeout and retry
+RUN pip install --no-cache-dir --default-timeout=100 -r requirements.txt || \
+    (echo "Retrying pip install..." && pip install --no-cache-dir --default-timeout=100 -r requirements.txt)
 
 # Copy the rest of the application
 COPY . .
@@ -26,4 +29,4 @@ ENV PYTHONDONTWRITEBYTECODE=1
 EXPOSE 8501
 
 # Command to run the application
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"] 
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

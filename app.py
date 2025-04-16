@@ -38,7 +38,7 @@ from ui_components import (
     render_suggestions_section
 )
 from datetime import datetime
-from jobs.job_search import render_job_search
+
 from PIL import Image
 
 class ResumeApp:

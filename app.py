@@ -31,7 +31,7 @@ import io
 from docx import Document
 from docx.shared import Inches, Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from feedback.feedback import FeedbackManager
+ 
 from ui_components import (
     apply_modern_styles, hero_section, feature_card, about_section, 
     page_header, render_analytics_section, render_activity_section, 

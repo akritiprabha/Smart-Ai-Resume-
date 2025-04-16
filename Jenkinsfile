@@ -18,8 +18,9 @@ pipeline {
         stage('Remove Old Container and Image') {
             steps {
                 echo '=== Stopping and Removing Old Container ==='
-                bat "docker stop %DOCKER_CONTAINER% || echo Container not running"
-                bat "docker rm %DOCKER_CONTAINER% || echo Container not found"
+                bat 'docker ps -q -f name=%DOCKER_CONTAINER% && docker stop %DOCKER_CONTAINER% || exit 0'
+                bat 'docker ps -a -q -f name=%DOCKER_CONTAINER% && docker rm %DOCKER_CONTAINER% || exit 0'
+
 
                 echo '=== Removing Old Docker Image ==='
                 bat "docker rmi %DOCKER_IMAGE% || echo Image not found or in use"

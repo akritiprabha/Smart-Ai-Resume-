@@ -4,20 +4,22 @@
 /* Root Variables */
 :root {
    --primary-gradient: linear-gradient(135deg, #091e23 0%, #0083B0 100%);
-    --secondary-gradient: linear-gradient(135deg, #2D2D2D 0%, #1E1E1E 100%);
-    --accent-color: #00B4DB;
-    --bg-dark: #ffffff;
-    --bg-darker: #ffffff;
-    --bg-light: #ffffff;
-    --text-primary: #0b2235;
-    --text-secondary: #faf7f7;
-    --border-color: #3D3D3D;
-    --success-color: #4CAF50;
-    --warning-color: #FFA726;
-    --error-color: #F44336;
+   --secondary-gradient: linear-gradient(135deg, #2D2D2D 0%, #1E1E1E 100%);
+   --accent-color: #00B4DB;
+
+   /* Updated background colors for visibility */
+   --bg-dark: #f5f7fa;         /* very light gray-blue */
+   --bg-darker: #e9eff5;       /* slightly darker variant */
+   --bg-light: #ffffff;
+
+   --text-primary: #0b2235;
+   --text-secondary: #faf7f7;
+   --border-color: #3D3D3D;
+   --success-color: #4CAF50;
+   --warning-color: #FFA726;
+   --error-color: #F44336;
 }
 
-/* Global Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-darker);
@@ -29,7 +31,6 @@ body {
     background: var(--bg-darker);
 }
 
-/* Main container */
 .main {
     padding: 2rem;
     max-width: 1200px;

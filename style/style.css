@@ -3,14 +3,14 @@
 
 /* Root Variables */
 :root {
-    --primary-gradient: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
+   --primary-gradient: linear-gradient(135deg, #091e23 0%, #0083B0 100%);
     --secondary-gradient: linear-gradient(135deg, #2D2D2D 0%, #1E1E1E 100%);
     --accent-color: #00B4DB;
-    --bg-dark: #1E1E1E;
-    --bg-darker: #171717;
-    --bg-light: #2D2D2D;
-    --text-primary: #E0E0E0;
-    --text-secondary: #B0B0B0;
+    --bg-dark: #ffffff;
+    --bg-darker: #ffffff;
+    --bg-light: #ffffff;
+    --text-primary: #0b2235;
+    --text-secondary: #faf7f7;
     --border-color: #3D3D3D;
     --success-color: #4CAF50;
     --warning-color: #FFA726;

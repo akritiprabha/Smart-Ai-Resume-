@@ -1,4 +1,3 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 /* Root Variables */
@@ -9,10 +8,10 @@
 
    /* Updated background colors for visibility */
    --bg-dark: #f5f7fa;         /* very light gray-blue */
-   --bg-darker: #e9eff5;       /* slightly darker variant */
-   --bg-light: #ffffff;
+   --bg-darker: #222;          /* slightly darker variant */
+   --bg-light: #fff;
 
-   --text-primary: #0b2235;
+   --text-primary: #0b2235;    /* Dark text for good contrast */
    --text-secondary: #faf7f7;
    --border-color: #3D3D3D;
    --success-color: #4CAF50;
@@ -22,8 +21,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-darker);
-    color: var(--text-primary);
+    background-color: var(--bg-darker);  /* Dark background */
+    color: var(--text-primary);          /* Dark text for contrast */
     line-height: 1.6;
 }
 
